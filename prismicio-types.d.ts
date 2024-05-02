@@ -65,69 +65,6 @@ interface DocsDocumentData {
 export type DocsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<DocsDocumentData>, "docs", Lang>
 
-/**
- * Item in *Menu → menus*
- */
-export interface MenuDocumentDataMenusItem {
-  /**
-   * href field in *Menu → menus*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menus[].href
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  href: prismic.LinkField
-
-  /**
-   * title field in *Menu → menus*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menus[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField
-
-  /**
-   * icon field in *Menu → menus*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menus[].icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon: prismic.ImageField<never>
-}
-
-/**
- * Content for Menu documents
- */
-interface MenuDocumentData {
-  /**
-   * menus field in *Menu*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu.menus[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  menus: prismic.GroupField<Simplify<MenuDocumentDataMenusItem>>
-}
-
-/**
- * Menu document from Prismic
- *
- * - **API ID**: `menu`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type MenuDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<MenuDocumentData>, "menu", Lang>
-
 type PageDocumentDataSlicesSlice =
   | HeroSliderSlice
   | FaqsSlice
@@ -207,7 +144,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>
 
-export type AllDocumentTypes = DocsDocument | MenuDocument | PageDocument
+export type AllDocumentTypes = DocsDocument | PageDocument
 
 /**
  * Primary content in *Benefits → Items*
@@ -828,9 +765,6 @@ declare module "@prismicio/client" {
       DocsDocument,
       DocsDocumentData,
       DocsDocumentDataSlicesSlice,
-      MenuDocument,
-      MenuDocumentData,
-      MenuDocumentDataMenusItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
