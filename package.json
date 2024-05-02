@@ -1,9 +1,8 @@
 {
-  "name": "nextjs-starter-prismic-minimal-ts",
-  "version": "0.1.0",
+  "name": "shushidrive",
+  "version": "0.1",
   "private": true,
-  "license": "Apache-2.0",
-  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
+  "author": "Dharmik Jagodana",
   "scripts": {
     "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "next:dev": "next dev",
@@ -27,10 +26,13 @@
     "@types/node": "^20.11.27",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",
+    "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "^14.1.3",
+    "postcss": "^8.4.38",
     "slice-machine-ui": "^1.26.0",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.4.2"
   }
 }
