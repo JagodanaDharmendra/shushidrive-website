@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Faq1"
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ipsum deserunt laborum laboris dolore ipsum cillum duis esse laborum veniam. Quis consectetur deserunt laborum cupidatat anim qui irure cupidatat deserunt ad consequat aliqua incididunt non ex.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ipsum deserunt laborum laboris dolore ipsum cillum duis esse laborum veniam. Quis consectetur deserunt laborum cupidatat anim qui irure cupidatat deserunt ad consequat aliqua incididunt non ex.",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					],
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Faq2"
+						}
+					]
+				]
+			}
+		]
+	}
+]
