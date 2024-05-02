@@ -66,6 +66,8 @@ export type DocsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<DocsDocumentData>, "docs", Lang>
 
 type PageDocumentDataSlicesSlice =
+  | FooterSlice
+  | TextSectionSlice
   | HeroSliderSlice
   | FaqsSlice
   | ServicesAndProductsSlice
