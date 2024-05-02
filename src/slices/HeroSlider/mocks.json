@@ -1,0 +1,139 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Header 1"
+						}
+					],
+					[
+						"slider_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+								"width": 5243,
+								"height": 3495
+							},
+							"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+							"width": 5243,
+							"height": 3495,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": "This is alter text",
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"button_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "About Us"
+						}
+					],
+					[
+						"sub_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Sub heading 1"
+						}
+					],
+					[
+						"button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "/about-us"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Header 1"
+						}
+					],
+					[
+						"sub_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Sub Header 2"
+						}
+					],
+					[
+						"slider_image",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1546548970-71785318a17b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTQ2NjEwMjN8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "flat lay photography of sliced pomegranate, lime, and lemon",
+							"origin": {
+								"id": "7r1HxvVC7AY",
+								"url": "https://images.unsplash.com/photo-1546548970-71785318a17b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTQ2NjEwMjN8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3104,
+								"height": 4656
+							},
+							"width": 3104,
+							"height": 4656,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "/contact-us",
+								"target": ""
+							}
+						}
+					],
+					[
+						"button_title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Contact Us"
+						}
+					]
+				]
+			}
+		]
+	}
+]

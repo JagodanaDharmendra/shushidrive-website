@@ -218,6 +218,91 @@ type HeaderSliceVariation = HeaderSliceDefault
  */
 export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>
 
+/**
+ * Primary content in *HeroSlider → Items*
+ */
+export interface HeroSliderSliceDefaultItem {
+  /**
+   * Heading field in *HeroSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField
+
+  /**
+   * Sub Heading field in *HeroSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.items[].sub_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_heading: prismic.KeyTextField
+
+  /**
+   * Slider Image field in *HeroSlider → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.items[].slider_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  slider_image: prismic.ImageField<never>
+
+  /**
+   * Button Link field in *HeroSlider → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+
+  /**
+   * Button title field in *HeroSlider → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.items[].button_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_title: prismic.KeyTextField
+}
+
+/**
+ * Default variation for HeroSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<HeroSliderSliceDefaultItem>
+>
+
+/**
+ * Slice variation for *HeroSlider*
+ */
+type HeroSliderSliceVariation = HeroSliderSliceDefault
+
+/**
+ * HeroSlider Shared Slice
+ *
+ * - **API ID**: `hero_slider`
+ * - **Description**: HeroSlider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliderSlice = prismic.SharedSlice<
+  "hero_slider",
+  HeroSliderSliceVariation
+>
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -240,6 +325,10 @@ declare module "@prismicio/client" {
       HeaderSliceDefaultItem,
       HeaderSliceVariation,
       HeaderSliceDefault,
+      HeroSliderSlice,
+      HeroSliderSliceDefaultItem,
+      HeroSliderSliceVariation,
+      HeroSliderSliceDefault,
     }
   }
 }

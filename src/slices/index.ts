@@ -4,4 +4,5 @@ import dynamic from "next/dynamic"
 
 export const components = {
   header: dynamic(() => import("./Header")),
+  hero_slider: dynamic(() => import("./HeroSlider")),
 }
