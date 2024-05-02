@@ -4,7 +4,17 @@ import type * as prismic from "@prismicio/client"
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type DocsDocumentDataSlicesSlice = TextSectionSlice | FooterSlice | HeaderSlice
+type DocsDocumentDataSlicesSlice =
+  | FaqsSlice
+  | ImageSectionSlice
+  | TestimonialsSlice
+  | ServicesAndProductsSlice
+  | HeroSliderSlice
+  | IframeSlice
+  | BenefitsSlice
+  | TextSectionSlice
+  | FooterSlice
+  | HeaderSlice
 
 /**
  * Content for Docs documents
@@ -66,6 +76,7 @@ export type DocsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<DocsDocumentData>, "docs", Lang>
 
 type PageDocumentDataSlicesSlice =
+  | IframeSlice
   | FooterSlice
   | TextSectionSlice
   | HeroSliderSlice
