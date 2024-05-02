@@ -9,7 +9,6 @@
 				"value": "Shushi Drive"
 			},
 			"logo": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
@@ -27,7 +26,23 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"mobile_number_title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "+91 99988 77766"
+			},
+			"mobile_number_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "tel:+919998877766",
+					"target": "_blank"
+				}
 			}
 		},
 		"items": [

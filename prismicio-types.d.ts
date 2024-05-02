@@ -4,6 +4,67 @@ import type * as prismic from "@prismicio/client"
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
+type DocsDocumentDataSlicesSlice = TextSectionSlice | FooterSlice | HeaderSlice
+
+/**
+ * Content for Docs documents
+ */
+interface DocsDocumentData {
+  /**
+   * Slice Zone field in *Docs*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: docs.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DocsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Docs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: docs.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField
+
+  /**
+   * Meta Image field in *Docs*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: docs.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>
+
+  /**
+   * Meta Title field in *Docs*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: docs.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField
+}
+
+/**
+ * Docs document from Prismic
+ *
+ * - **API ID**: `docs`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DocsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<DocsDocumentData>, "docs", Lang>
+
 /**
  * Item in *Menu → menus*
  */
@@ -146,7 +207,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>
 
-export type AllDocumentTypes = MenuDocument | PageDocument
+export type AllDocumentTypes = DocsDocument | MenuDocument | PageDocument
 
 /**
  * Primary content in *Benefits → Items*
@@ -330,6 +391,26 @@ export interface HeaderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>
+
+  /**
+   * Mobile Number title field in *Header → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.mobile_number_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  mobile_number_title: prismic.KeyTextField
+
+  /**
+   * Mobile Number Link field in *Header → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.mobile_number_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  mobile_number_link: prismic.LinkField
 }
 
 /**
@@ -669,6 +750,71 @@ export type TestimonialsSlice = prismic.SharedSlice<
   TestimonialsSliceVariation
 >
 
+/**
+ * Primary content in *TextSection → Primary*
+ */
+export interface TextSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *TextSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_section.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField
+
+  /**
+   * Description field in *TextSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_section.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField
+
+  /**
+   * Content field in *TextSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_section.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField
+}
+
+/**
+ * Default variation for TextSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSectionSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *TextSection*
+ */
+type TextSectionSliceVariation = TextSectionSliceDefault
+
+/**
+ * TextSection Shared Slice
+ *
+ * - **API ID**: `text_section`
+ * - **Description**: TextSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSectionSlice = prismic.SharedSlice<
+  "text_section",
+  TextSectionSliceVariation
+>
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -679,6 +825,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      DocsDocument,
+      DocsDocumentData,
+      DocsDocumentDataSlicesSlice,
       MenuDocument,
       MenuDocumentData,
       MenuDocumentDataMenusItem,
@@ -720,6 +869,10 @@ declare module "@prismicio/client" {
       TestimonialsSliceDefaultItem,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      TextSectionSlice,
+      TextSectionSliceDefaultPrimary,
+      TextSectionSliceVariation,
+      TextSectionSliceDefault,
     }
   }
 }

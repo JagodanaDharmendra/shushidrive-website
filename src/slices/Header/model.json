@@ -29,6 +29,21 @@
             },
             "thumbnails": []
           }
+        },
+        "mobile_number_title": {
+          "type": "Text",
+          "config": {
+            "label": "Mobile Number title",
+            "placeholder": ""
+          }
+        },
+        "mobile_number_link": {
+          "type": "Link",
+          "config": {
+            "label": "Mobile Number Link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {

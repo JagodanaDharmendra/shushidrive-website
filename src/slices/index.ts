@@ -11,4 +11,5 @@ export const components = {
   image_section: dynamic(() => import("./ImageSection")),
   services_and_products: dynamic(() => import("./ServicesAndProducts")),
   testimonials: dynamic(() => import("./Testimonials")),
+  text_section: dynamic(() => import("./TextSection")),
 }

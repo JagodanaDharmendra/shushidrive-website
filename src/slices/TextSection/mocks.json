@@ -1,0 +1,80 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Privacy Policy",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Last update 2024"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sushi Drive is a B2B online portal where the Registered Travel Agents and Travel Suppliers are the expected visitors.\n",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "For our Portal, one of the chief priorities is to sustain the Privacy of our Travel partners and suppliers. This Privacy Policy document contains various types of information that are collected and recorded by Sushi Drive. It also exhibits how we utilize this information.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "If any of our members have additional questions or have a requirement to receive more information regarding our Privacy Policy, please contact us through our email at inquiry@shushidrive.com without any hesitation.\n",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 167,
+									"end": 190,
+									"data": {
+										"__TYPE__": "ExternalLink",
+										"url": "mailto:inquiry@shushidrive.com",
+										"target": "_blank"
+									}
+								},
+								{
+									"type": "strong",
+									"start": 167,
+									"end": 190
+								}
+							]
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "It is important to comprehend that this Privacy Policy applies only to our online activities and is valid for visitors to our Sushi Drive concerning the information that they share or collect in our portal. Please remember that this Policy does not apply to any of the information collected offline or via sources other than this website.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
