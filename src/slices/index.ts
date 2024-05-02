@@ -8,6 +8,7 @@ export const components = {
   footer: dynamic(() => import("./Footer")),
   header: dynamic(() => import("./Header")),
   hero_slider: dynamic(() => import("./HeroSlider")),
+  iframe: dynamic(() => import("./Iframe")),
   image_section: dynamic(() => import("./ImageSection")),
   services_and_products: dynamic(() => import("./ServicesAndProducts")),
   testimonials: dynamic(() => import("./Testimonials")),

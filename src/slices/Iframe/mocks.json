@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"iframe_link": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "https://form.jotform.com/240655211730043?isIframeEmbed=1"
+			}
+		},
+		"items": []
+	}
+]

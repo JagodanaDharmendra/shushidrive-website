@@ -490,6 +490,48 @@ export type HeroSliderSlice = prismic.SharedSlice<
 >
 
 /**
+ * Primary content in *Iframe → Primary*
+ */
+export interface IframeSliceDefaultPrimary {
+  /**
+   * IFrame link field in *Iframe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: iframe.primary.iframe_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  iframe_link: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Iframe Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IframeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IframeSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Iframe*
+ */
+type IframeSliceVariation = IframeSliceDefault
+
+/**
+ * Iframe Shared Slice
+ *
+ * - **API ID**: `iframe`
+ * - **Description**: Iframe
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IframeSlice = prismic.SharedSlice<"iframe", IframeSliceVariation>
+
+/**
  * Primary content in *ImageSection → Primary*
  */
 export interface ImageSectionSliceDefaultPrimary {
@@ -792,6 +834,10 @@ declare module "@prismicio/client" {
       HeroSliderSliceDefaultItem,
       HeroSliderSliceVariation,
       HeroSliderSliceDefault,
+      IframeSlice,
+      IframeSliceDefaultPrimary,
+      IframeSliceVariation,
+      IframeSliceDefault,
       ImageSectionSlice,
       ImageSectionSliceDefaultPrimary,
       ImageSectionSliceVariation,
